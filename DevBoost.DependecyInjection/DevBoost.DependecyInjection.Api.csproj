@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Devboost.DependencyInjection.Domain\DevBoost.DependencyInjection.Domain.csproj" />
+    <ProjectReference Include="..\Devboost.DependencyInjection.IoC\DevBoost.DependencyInjection.IoC.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,8 +1,8 @@
-﻿using DevBoost.DependecyInjection.Interfaces;
+﻿using DevBoost.DependecyInjection.Domain.Interfaces.Services;
 using System.Text.Json.Serialization;
 
 
-namespace DevBoost.DependecyInjection.Models.DI_GetterSetter
+namespace DevBoost.DependecyInjection.Domain.Models.DI_GetterSetter
 {
     public class Esportista_GS
     {

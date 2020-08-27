@@ -1,10 +1,10 @@
-﻿using DevBoost.DependecyInjection.Interfaces;
-using DevBoost.DependecyInjection.Models.DI_Construtor;
-using DevBoost.DependecyInjection.Models.DI_GetterSetter;
-using DevBoost.DependecyInjection.Models.DI_Interface;
+﻿using DevBoost.DependecyInjection.Domain.Interfaces.Services;
+using DevBoost.DependecyInjection.Domain.Models.DI_Construtor;
+using DevBoost.DependecyInjection.Domain.Models.DI_GetterSetter;
+using DevBoost.DependecyInjection.Domain.Models.DI_Interface;
 using System.Collections.Generic;
 
-namespace DevBoost.DependecyInjection.Services
+namespace DevBoost.DependecyInjection.DomainServices
 {
     public class Esportistas : IEsportistas
     {

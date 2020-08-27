@@ -1,7 +1,6 @@
-﻿using DevBoost.DependecyInjection.Interfaces;
-using System;
+﻿using DevBoost.DependecyInjection.Domain.Interfaces.Services;
 
-namespace DevBoost.DependecyInjection.Models.DI_Construtor
+namespace DevBoost.DependecyInjection.Domain.Models.DI_Construtor
 {
     public class Esportista_C
     {

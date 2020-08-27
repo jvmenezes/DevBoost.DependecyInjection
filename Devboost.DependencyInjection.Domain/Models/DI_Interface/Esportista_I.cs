@@ -1,7 +1,7 @@
-﻿using DevBoost.DependecyInjection.Interfaces;
-using System;
+﻿using DevBoost.DependecyInjection.Domain.Interfaces;
+using DevBoost.DependecyInjection.Domain.Interfaces.Services;
 
-namespace DevBoost.DependecyInjection.Models.DI_Interface
+namespace DevBoost.DependecyInjection.Domain.Models.DI_Interface
 {
     public class Esportista_I : IAtividadesDI_I
     {

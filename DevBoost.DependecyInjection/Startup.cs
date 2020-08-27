@@ -1,13 +1,11 @@
-using DevBoost.DependecyInjection.Interfaces;
-using DevBoost.DependecyInjection.Services;
+using Devboost.DependencyInjection.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DevBoost.DependecyInjection
+namespace DevBoost.DependecyInjection.Api
 {
     public class Startup
     {
@@ -22,15 +20,24 @@ namespace DevBoost.DependecyInjection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddSingleton<IConfiguration>(_ => Configuration); //Cria uma única instância, pois não tem problema utilizar o mesmo objeto para todas as requisições nesse caso
-            services.AddTransient<Esportistas>(); //Transiente faz com que seja criado um objeto para cada requisição realizada para essa interface, afim de evitar concorrência            
-
+            services.AddSwaggerGen();
+            services.ResolveDependencies(Configuration);
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevBoost Dependency Injection");
+            });
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
