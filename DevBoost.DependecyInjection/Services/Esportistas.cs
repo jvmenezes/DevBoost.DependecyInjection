@@ -9,7 +9,7 @@ namespace DevBoost.DependecyInjection.Services
     public class Esportistas : IEsportistas
     {
 
-        #region Injeção de dependência por contrutor
+        #region Injeção de dependência via contrutor dentro da classe "Esportista_C"
         public List<Esportista_C> ObterTodos_C()
         {
 
@@ -19,7 +19,9 @@ namespace DevBoost.DependecyInjection.Services
                 new Esportista_C(new Atividades() { Nome = "Ciclista" }){ Nome = "Beltrano", Idade = 20, Pais = "Brasil" }
             };
         }
+        #endregion
 
+        #region Injeção de dependência via Getters e Setters dentro da classe "Esportista_GS"
         public List<Esportista_GS> ObterTodos_GS()
         {
 
@@ -29,7 +31,9 @@ namespace DevBoost.DependecyInjection.Services
                 new Esportista_GS(){ Nome = "Beltrano", Idade = 20, Pais = "Brasil", Atividades = new Atividades() { Nome = "Ciclista" } }
             };
         }
+        #endregion
 
+        #region Injeção de dependência via interface dentro da classe "Esportista_I"
         public List<Esportista_I> ObterTodos_I()
         {
             List<Esportista_I> listReturn = new List<Esportista_I>();

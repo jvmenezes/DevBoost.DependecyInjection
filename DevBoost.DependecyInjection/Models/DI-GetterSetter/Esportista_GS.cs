@@ -1,5 +1,6 @@
 ﻿using DevBoost.DependecyInjection.Interfaces;
-using System;
+using System.Text.Json.Serialization;
+
 
 namespace DevBoost.DependecyInjection.Models.DI_GetterSetter
 {
@@ -8,6 +9,7 @@ namespace DevBoost.DependecyInjection.Models.DI_GetterSetter
 
         private IAtividades _atividades;
 
+        [JsonIgnore] //Faz com que essa propriedade não seja serializada no JSON
         public IAtividades Atividades
         {
             get { return _atividades; }
@@ -16,12 +18,10 @@ namespace DevBoost.DependecyInjection.Models.DI_GetterSetter
 
         public string Nome { get; set; }
         public int Idade { get; set; }
-        public string Pais { get; set; }
-        public string Atividade { get; set; }
-
-        public IAtividades GetAtividade()
+        public string Pais { get; set; }        
+        public string Atividade
         {
-            return _atividades;
+            get { return _atividades.GetNome(); }            
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevBoost.DependecyInjection.Interfaces
 {
-    public interface IAtividadesDI
+    public interface IAtividadesDI_I
     {
         void setAtividade(IAtividades atividades);
     }
